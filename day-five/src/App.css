@@ -1,0 +1,120 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+ .logo{
+  height:40px;
+}
+
+body {
+  
+  background-color: #000000;
+ 
+  }
+.avatar{
+  height:20px
+}
+.navbar{
+    background-color: #000000;
+    color:#e5e5e5;
+    font-size: .8rem;
+}
+.genre{
+  border:1px solid white;
+}
+
+.card{
+  height:300px;
+}
+.card img{
+  height:100%;
+  object-fit: cover;
+}
+.foo{
+  color:white
+}
+.edit-profile{
+  font-weight: 400;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  letter-spacing:1px;
+  font-size: 48px;
+}
+hr{
+  border-bottom: 1px solid white;
+}
+.profileleft{
+  position: relative;
+}
+.profileleft img{
+height:140px;
+}
+.profileleft .bi-pencil{
+ position: absolute;
+ bottom:6px;
+ left:10px;
+ color:white;
+ background-color:black;
+ border-radius: 50%;
+ border:1px solid white
+}
+.profilerightfirst hr{
+  border: 1px solid white;
+}
+
+.profilerightfirst input{
+  width:60%;
+  background-color: grey;
+  border:none;
+  color:white
+}
+
+
+.profilerightfirst .select{
+  width:12%;
+  padding:0px;
+  background-color: black;
+  color:white
+
+}
+
+
+.largerCheckbox{
+  accent-color: black;
+  height:10px;
+  vertical-align: middle;
+}
