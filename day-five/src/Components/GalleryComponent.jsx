@@ -51,7 +51,7 @@ class GalleryComponent extends Component{
         return(
       <Container>   
         <h5 style={{color:"white"}}>{this.props.saga.toUpperCase()}</h5> 
-        {this.state.isError && <div className="text-center"> <Alert variant="danger">Something's wrong</Alert></div>}
+        {this.state.isError &&  <Alert variant="danger" className="w-50">Something's wrong</Alert>}
       {this.state.isLoading && <div className="text-center"> <Spinner animation="border" variant="success" /></div>}
    <Row className="mt-4 ">
  

@@ -15,8 +15,10 @@ function App() {
      <GalleryComponent saga="harry potter"/>
      <GalleryComponent saga="lord of the rings"/>
      <GalleryComponent saga="avengers" />
-     <Profile />
+     <GalleryComponent saga="star wars" />
      <Footer />
+     <Profile />
+     
      
     </div>
   );

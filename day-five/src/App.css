@@ -58,9 +58,7 @@ body {
   border:1px solid white;
 }
 
-.card{
-  height:300px;
-}
+
 .card img{
   height:100%;
   object-fit: cover;
@@ -118,3 +116,38 @@ height:140px;
   height:10px;
   vertical-align: middle;
 }
+
+.hovv {
+    height:60px;
+  color: white;
+  padding: 24px;
+  position: absolute;
+  overflow: hidden;
+ 
+   z-index: 2;
+     background-image: linear-gradient(rgba(27, 37, 48, 0), #1b2530 48px);
+     transform: translateY(0px);
+     opacity: 0;
+     transition: opacity 0.3s, transform 0.5s;
+     font-size: 10px;
+ } 
+
+ .card{
+  height:250px;
+  position: relative;
+
+  transition: transform 0.5s;
+}
+
+.card:hover .hovv {
+      opacity: 1;
+      transform: translateY(188px);
+    } 
+
+    .card:hover {
+      transform: scale(1.2);
+      z-index: 2;
+    }
+
+
+
