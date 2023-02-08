@@ -19,6 +19,7 @@ class GalleryComponent extends Component{
             let res=await fetch("https://www.omdbapi.com/?apikey=2404898d&s="+this.props.saga)
             if(res.ok){
                 let data= await res.json()
+                
     
                 this.setState({
                     movies:data,

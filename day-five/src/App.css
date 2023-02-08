@@ -132,22 +132,24 @@ height:140px;
      font-size: 10px;
  } 
 
- .card{
-  height:250px;
+ .movie-card{
+  height:230px;
   position: relative;
 
   transition: transform 0.5s;
 }
+.movie-card a{
+  height:100%
+}
 
-.card:hover .hovv {
+.movie-card:hover .hovv {
       opacity: 1;
-      transform: translateY(188px);
+      transform: translateY(173px);
     } 
 
-    .card:hover {
+    .movie-card:hover {
       transform: scale(1.2);
       z-index: 2;
     }
-
 
 

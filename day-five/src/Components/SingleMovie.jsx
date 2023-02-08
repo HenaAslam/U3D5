@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { Col, Card,Badge} from "react-bootstrap";
+import {Link} from 'react-router-dom'
 
 class SingleMovie extends Component{
 
@@ -7,9 +8,9 @@ class SingleMovie extends Component{
 
 render(){
     return(
-        <Col xs={6} md={2} className= "mb-2" >
+        <Col xs={6} md={2} className= "mb-5 movie-card" >
             <Card  className="card" >
-            <Card.Img variant="top" src={this.props.movie?.Poster}  />
+            <Link to={"/details/" + this.props.movie?.imdbID}><Card.Img variant="top" src={this.props.movie?.Poster}  /></Link>
             <Card.Title className="hovv" >
                 {this.props.movie?.Title}
                  <Badge variant="danger" >{this.props.movie?.Year}</Badge>{' '}
