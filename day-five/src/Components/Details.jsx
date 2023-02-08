@@ -139,26 +139,26 @@ const  deleteComment = async (id) => {
     </Card.Header>
     <Accordion.Collapse eventKey="0">
       <Card.Body>   {comments.length !== 0 ?
-         ( <span>
+         ( <ul>
             <span className='text-white'>Comments</span>
    
    {comments.map((c)=>{
       
        return    <li className=" mt-3 list d-flex flex-column w-100" key={c._id} style={{border:"1px solid black"}}>
-          <span  className="py-3 com px-3 text-white" >
+          <div  className="py-3 com px-3 text-white" >
               <strong style={{color:"red"}}>{c.author}</strong>  : {c.comment} <Badge variant="danger" className="p-1 mr-1"> Rating : {c.rate} / 5 </Badge>
               <Button variant="danger" className='mt-2' size="sm" style={{display:"block"}} onClick={(e) => {
                   e.preventDefault()
                 deleteComment(c._id);
                   
                 }}>x</Button>
-              </span>   
+              </div>   
           
           
     
        </li>
     })}
-    </span> ) : 
+    </ul> ) : 
     <span style={{display:"block"}} className="text-white"><strong >No comments yet</strong></span> }</Card.Body>
     </Accordion.Collapse>
   </Card>
