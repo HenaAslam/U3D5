@@ -1,5 +1,5 @@
 
-import {Navbar,Nav} from 'react-bootstrap'
+import {Navbar,Nav,Form} from 'react-bootstrap'
 // import {logo} from '../netflix_logo.png'
 import {Link, useLocation} from 'react-router-dom'
 
@@ -18,13 +18,20 @@ const NavbarComponent=()=>{
     <Nav className="mr-auto">
     <Link to ="/"><div className={location.pathname==='/' ? "nav-link active" : "nav-link"}>Home</div> </Link>
       <Link to ="/tv-shows"><div className={location.pathname==='/tv-shows' ? "nav-link active" : "nav-link"}>TV Shows</div> </Link>
-      <Nav.Link href="#">Movies</Nav.Link>
+     <Link to="/movies"><div className={location.pathname==='/movies' ? "nav-link active" : "nav-link"}>Movies</div></Link> 
       <Nav.Link href="#">Recently added</Nav.Link>
       <Nav.Link href="#">My list</Nav.Link>
       
     </Nav>
     {/* ('/images/image-name.png')*/}
     <Nav>
+    <Form inline>
+ 
+    <Form.Control type="text" placeholder={  location.pathname==='/' ? "Search in Home" : location.pathname==='/tv-shows' ? "Search in Tv Shows" : "Search"}
+
+    
+      className="mr-sm-2" />
+    </Form>
       <Link to ="/profile">
       <div className={location.pathname==='/profile' ? "nav-link active" : "nav-link"}>Profile</div>
       </Link>

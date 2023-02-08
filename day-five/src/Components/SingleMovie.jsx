@@ -1,19 +1,24 @@
-import { Component } from "react";
-import { Col, Card,Badge} from "react-bootstrap";
-import {Link} from 'react-router-dom'
 
-class SingleMovie extends Component{
+import { Col, Card,Badge,Button} from "react-bootstrap";
+import {Link,useNavigate} from 'react-router-dom'
+
+const SingleMovie =(props)=> {
+
+const navigate=useNavigate()
 
 
-
-render(){
     return(
         <Col xs={6} md={2} className= "mb-5 movie-card" >
             <Card  className="card" >
-            <Link to={"/details/" + this.props.movie?.imdbID}><Card.Img variant="top" src={this.props.movie?.Poster}  /></Link>
+               
+            <Link to={"/details/" + props.movie?.imdbID}><Card.Img variant="top" src={props.movie?.Poster}  /></Link>
+            <Button variant="outline-dark" onClick={()=>{
+                navigate('/details/'+props.movie?.imdbID)
+            }}>Details</Button>
+
             <Card.Title className="hovv" >
-                {this.props.movie?.Title}
-                 <Badge variant="danger" >{this.props.movie?.Year}</Badge>{' '}
+                {props.movie?.Title}
+                 <Badge variant="danger" >{props.movie?.Year}</Badge>{' '}
             </Card.Title>
                     
                 
@@ -22,7 +27,7 @@ render(){
             </Card>
         </Col>
     )
-}
+
 }
 export default SingleMovie
 
