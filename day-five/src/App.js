@@ -17,8 +17,14 @@ function App() {
      <NavbarComponent />
 
 
-
-      <Routes>
+     <Routes>
+              <Route element={<GalleryComponent saga="lord of the rings"/>} path="/" />
+              <Route element={<TVShows />} path="/tv-shows" />
+              <Route element={<Profile />} path="/profile" />
+              <Route element={<Details />} path="details/:imdbid" />
+              <Route element={<h2 className="text-white text-center my-5">Page not found</h2>} path="*" />
+      </Routes>
+      {/* <Routes>
               <Route element={ <NavbarTwo />} path="/" />
       </Routes>
       <Routes>
@@ -26,14 +32,8 @@ function App() {
       </Routes>
       <Routes>
               <Route element={   <GalleryComponent saga="star wars" /> } path="/" />
-      </Routes>
-      <Routes>
-              <Route element={<GalleryComponent saga="lord of the rings"/>} path="/" />
-              <Route element={<TVShows />} path="/tv-shows" />
-              <Route element={<Profile />} path="/profile" />
-              <Route element={<Details />} path="details/:imdbid" />
-              <Route element={<h2 className="text-white text-center my-5">Page not found</h2>} path="*" />
-      </Routes>
+      </Routes> */}
+     
      
     
      <Footer />
