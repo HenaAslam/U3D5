@@ -1,4 +1,4 @@
-import{Card, Container, Row, Col, Spinner, Badge, ListGroup} from 'react-bootstrap'
+import{Card, Container, Row, Col, Spinner, Badge, Accordion,Button} from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 
 import { useEffect, useState } from 'react'
@@ -35,7 +35,7 @@ const Details=()=>{
                 let res=await fetch("  http://www.omdbapi.com/?apikey=2404898d&i=" + params.imdbid)
                 if(res.ok){
                     let data=await res.json()
-                 
+                    console.log(data)
                     setMovieToShow(data)
                     
                 }
@@ -75,30 +75,19 @@ const Details=()=>{
          movieToShow !== null ? (<Container className='mb-5 '>
     
          <Row className='justify-content-center'>
-             <Col xs={12} md={6}>
-             <Card  >
+             <Col xs={8} md={4} className="mb-3">
+             <Card className='details-card' >
 <Card.Img variant="top" src={movieToShow.Poster} />
 <Card.Body>
  <Card.Title> {movieToShow.Title}</Card.Title>
  <Card.Text>
  <Badge variant="danger">{movieToShow.Genre}</Badge>{' '}
  
-        {comments.length !== 0 ?
-         ( <ListGroup>
-   
-   {comments.map((c)=>{
-      
-       return    <ListGroup.Item className=" mt-3 list d-flex flex-column w-100" key={c._id}>
-          <span  className="py-3 com px-3" >
-              <strong style={{color:"red"}}>{c.author}</strong>  : {c.comment} <Badge variant="danger" className="p-1 mr-1"> Rating : {c.rate} / 5 </Badge>
-              </span>   
-          
-          
-    
-       </ListGroup.Item>
-    })}
-    </ListGroup> ) : 
-    <span><strong>No comments yet</strong></span> }
+  
+   <span  className="py-3 com px-3" style={{display:"block"}} ><strong style={{color:"red"}}>{movieToShow.Ratings[1].Source}</strong>  : {movieToShow.Ratings[1].Value}</span>   
+
+
+
            
        
  
@@ -106,6 +95,53 @@ const Details=()=>{
  
 </Card.Body>
 </Card>
+             </Col>
+             <Col xs={8} md={4} >
+
+
+             <Accordion defaultActiveKey="0">
+  <Card>
+    <Card.Header>
+  
+      <Accordion.Toggle as={Button} variant="outline-light" eventKey="0">
+        Comments
+      </Accordion.Toggle>
+    </Card.Header>
+    <Accordion.Collapse eventKey="0">
+      <Card.Body>   {comments.length !== 0 ?
+         ( <span>
+            <span className='text-white'>Comments</span>
+   
+   {comments.map((c)=>{
+      
+       return    <li className=" mt-3 list d-flex flex-column w-100" key={c._id} style={{border:"1px solid black"}}>
+          <span  className="py-3 com px-3 text-white" >
+              <strong style={{color:"red"}}>{c.author}</strong>  : {c.comment} <Badge variant="danger" className="p-1 mr-1"> Rating : {c.rate} / 5 </Badge>
+              </span>   
+          
+          
+    
+       </li>
+    })}
+    </span> ) : 
+    <span style={{display:"block"}}><strong>No comments yet</strong></span> }</Card.Body>
+    </Accordion.Collapse>
+  </Card>
+
+
+  <Card>
+    <Card.Header>
+      <Accordion.Toggle as={Button} variant="outline-light" eventKey="1">
+        Plot
+      </Accordion.Toggle>
+    </Card.Header>
+    <Accordion.Collapse eventKey="1">
+      <Card.Body className='text-white'>{movieToShow.Plot}</Card.Body>
+    </Accordion.Collapse>
+  </Card>
+</Accordion>
+          
+                
              </Col>
          </Row>
      </Container>) :   <Spinner animation="border" variant="success" />
@@ -116,14 +152,3 @@ const Details=()=>{
 export default Details
 
 
-//  {/* <ListGroup>
-//  {movieToShow.Ratings.map((r)=>{
-            
-//             return    <ListGroup.Item>
-//           <p  className="py-3 com px-3" ><strong style={{color:"red"}}>{r.Source}</strong>  : {r.Value}</p>    
-//               </ListGroup.Item>
-//          })} 
-
-
-   
-//  </ListGroup> */}

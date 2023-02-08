@@ -64,7 +64,8 @@ body {
   object-fit: cover;
 }
 .foo{
-  color:white
+  color:white;
+
 }
 .edit-profile{
   font-weight: 400;
@@ -153,3 +154,18 @@ height:140px;
     }
 
 
+.accordion{
+  border-radius: 8px;
+overflow: hidden;
+box-shadow: 0 4px 4px -2px rgb(0 0 0 / 50%);
+border:1px solid white
+
+} 
+
+.accordion .card{
+  background-color:black;
+
+}
+.accordion li{
+  border:1px solid white !important
+}
