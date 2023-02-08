@@ -4,7 +4,7 @@ import Footer from './Components/Footer';
 import Details from './Components/Details'
 import GalleryComponent from './Components/GalleryComponent';
 import NavbarComponent from './Components/NavbarComponent';
-import NavbarTwo from './Components/NavbarTwo';
+// import NavbarTwo from './Components/NavbarTwo';
 import Profile from './Components/Profile';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import TVShows from './Components/TVShows';
