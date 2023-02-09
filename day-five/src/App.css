@@ -139,6 +139,13 @@ height:140px;
 
   transition: transform 0.5s;
 }
+.details-btn{
+  position:absolute;
+  top:0;
+  right:0;
+  font-size: 12px;
+  padding: .15rem !important;
+}
 .movie-card a{
   height:100%
 }

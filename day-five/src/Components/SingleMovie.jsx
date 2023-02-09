@@ -12,9 +12,9 @@ const navigate=useNavigate()
             <Card  className="card" >
                
             <Link to={"/details/" + props.movie?.imdbID}><Card.Img variant="top" src={props.movie?.Poster}  /></Link>
-            <Button variant="outline-dark" onClick={()=>{
+            <Button variant="info" onClick={()=>{
                 navigate('/details/'+props.movie?.imdbID)
-            }}>Details</Button>
+            }} className="details-btn">Details</Button>
 
             <Card.Title className="hovv" >
                 {props.movie?.Title}
